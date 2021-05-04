@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Chrome;
 using System;
 
 namespace Corcentric_Automation
@@ -13,9 +13,9 @@ namespace Corcentric_Automation
         [TestInitialize]
         public void Start()
         {
-            FirefoxOptions options = new FirefoxOptions();
+            ChromeOptions options = new ChromeOptions();
             options.AddArguments("start-maximized");
-            driver = new FirefoxDriver();
+            driver = new ChromeDriver();
             driver.Url = "https://demoqa.com/";
         }
 
