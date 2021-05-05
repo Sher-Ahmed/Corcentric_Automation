@@ -16,7 +16,7 @@ namespace Corcentric_Automation.PageObjects
         public IWebElement SearchForm { get; set; }
 
         [FindsBy(How = How.XPath, Using = "/html/body/div/div/div/div[2]/div[1]/div/div/div[2]/div/ul/li/span")]
-        public IWebElement SearchPartialForm { get; set; }
+        public IWebElement SearchPracticeForm { get; set; }
 
         public FormPage(IWebDriver driver)
         {
@@ -24,7 +24,8 @@ namespace Corcentric_Automation.PageObjects
             PageFactory.InitElements(driver, this);
         }
 
-
+        // Summary:
+        //     Navigate to Form Page.
         public void NavigateToForm()
         {
             IJavaScriptExecutor ex = (IJavaScriptExecutor)driver;
@@ -32,11 +33,13 @@ namespace Corcentric_Automation.PageObjects
             SearchForm.Click();
         }
 
+        // Summary:
+        //     Navigate to Practice Form Page.
         public void NavigateToPracticeForm()
         {
             IJavaScriptExecutor ex = (IJavaScriptExecutor)driver;
-            ex.ExecuteScript("arguments[0].scrollIntoView();", SearchPartialForm);
-            SearchPartialForm.Click();
+            ex.ExecuteScript("arguments[0].scrollIntoView();", SearchPracticeForm);
+            SearchPracticeForm.Click();
         }
     }
 }

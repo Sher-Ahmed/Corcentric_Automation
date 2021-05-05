@@ -63,7 +63,7 @@
   <ItemGroup>
     <Compile Include="BaseTest.cs" />
     <Compile Include="PageObjects\FormPage.cs" />
-    <Compile Include="PageObjects\PartialFormPage.cs" />
+    <Compile Include="PageObjects\PracticeFormPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCases\DemoqaTestCases.cs" />
   </ItemGroup>

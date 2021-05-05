@@ -16,31 +16,23 @@ namespace Corcentric_Automation.TestCases
         public void SubmitFormSuccess()
         {
             FormPage formPage = new FormPage(driver);
-            formPage.NavigateToForm();
-            Thread.Sleep(5000);
-            formPage.NavigateToPracticeForm();
-            Thread.Sleep(5000);
-            PartialFormPage partialFormPage = new PartialFormPage(driver);
-            partialFormPage.FillMandatoryPartialFormFields();
-            Thread.Sleep(5000);
-            partialFormPage.SubmitPartialFormFields();            
-            Assert.IsTrue(partialFormPage.IsSuccessfulSubmission());
-            Thread.Sleep(5000);
+            formPage.NavigateToForm();            
+            formPage.NavigateToPracticeForm();            
+            PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
+            practiceFormPage.FillMandatoryPracticeFormFields();            
+            practiceFormPage.SubmitPracticeFormFields();            
+            Assert.IsTrue(practiceFormPage.IsSuccessfulSubmission());            
         }
 
         [TestMethod]
         public void SubmitFormFailureRequiredFields()
         {
             FormPage formPage = new FormPage(driver);
-            formPage.NavigateToForm();
-            Thread.Sleep(5000);
-            formPage.NavigateToPracticeForm();
-            Thread.Sleep(5000);
-            PartialFormPage partialFormPage = new PartialFormPage(driver);
-            partialFormPage.SubmitPartialFormFields();
-            Thread.Sleep(5000);
-            Assert.IsTrue(partialFormPage.IsFailedSubmission());
-            Thread.Sleep(5000);
+            formPage.NavigateToForm();            
+            formPage.NavigateToPracticeForm();            
+            PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
+            practiceFormPage.SubmitPracticeFormFields();            
+            Assert.IsTrue(practiceFormPage.IsFailedSubmission());            
         }
     }
 }
